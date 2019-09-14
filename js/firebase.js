@@ -91,10 +91,6 @@ function checkWebpage(){
     }
 }
 
-function openContent(){
-    document.getElementById("coursecontent").style.visibility='visible';
-}
-
 function logTransaction(){
-    var transactionType = document.getElementById()
+    var transactionType = document.getElementById().value;
 }
