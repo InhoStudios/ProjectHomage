@@ -94,3 +94,7 @@ function checkWebpage(){
 function openContent(){
     document.getElementById("coursecontent").style.visibility='visible';
 }
+
+function logTransaction(){
+    var transactionType = document.getElementById()
+}
