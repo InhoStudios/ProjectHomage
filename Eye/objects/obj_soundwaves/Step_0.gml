@@ -17,3 +17,8 @@ if(place_meeting(x,y,obj_wall)) {
 	instance_create_layer(x,y,layer,obj_particle);
 	instance_destroy();
 }
+
+
+if(place_meeting(x,y,obj_spike)){
+	image_blend = c_red;
+}

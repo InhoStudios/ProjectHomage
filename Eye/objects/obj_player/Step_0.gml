@@ -14,10 +14,10 @@ if(place_meeting(x,y + 1, obj_wall)) {
 		if(counter >= 0){
 			counter--;
 		} else {
-			var step = instance_create_layer(x,y,layer,obj_particle);
-			audio_play_sound(snd_hit,9,false);
-			step.image_xscale = 1.3;
 			counter = reset;
+			instance_create_layer(x - 6,y + 16,layer,obj_particle);
+			instance_create_layer(x + 6,y,layer + 16,obj_particle);
+			audio_play_sound(snd_hit,12,false);
 		}
 	}
 
@@ -41,10 +41,16 @@ x += hsp;
 if(place_meeting(x,y + vsp, obj_wall)) {
 	if(!landed){
 		landed = true;
-		var step = instance_create_layer(x,y + 16,layer,obj_particle);
-		step.image_xscale = 1.5;
-		step.image_yscale = 1.3;
+		var step3 = instance_create_layer(x,y + 16,layer,obj_particle);
+		step3.image_xscale = 1.5;
+		step3.image_yscale = 1.3;
 		audio_play_sound(snd_hit,11,false);
+		
+		var left = instance_create_layer(x,y,layer,obj_soundwaves);
+		left.dir = 190;
+		var right = instance_create_layer(x,y,layer,obj_soundwaves);
+		right.dir = -10;
+		
 	}
     while(!place_meeting(x, y + sign(vsp), obj_wall)) {
         y += sign(vsp);
@@ -58,4 +64,8 @@ if(m_left && enabled){
 	enabled = !enabled;
 	alarm[0] = time;
 	audio_play_sound(snd_shoot,10,false);
+	rad = 0;
+	cx = x;
+	cy = y;
+	ca = 1;
 }
