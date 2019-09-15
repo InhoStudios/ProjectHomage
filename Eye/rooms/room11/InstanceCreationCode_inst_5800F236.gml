@@ -1,1 +1,1 @@
-toRoom = room1
+toRoom = room2
